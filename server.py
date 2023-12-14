@@ -5,13 +5,12 @@ import sys
 
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
-server = '192.168.1.101'
+host = socket.gethostname()
 port = 5555
 
-server_ip = socket.gethostbyname(server)
 
 try:
-    s.bind((server, port))
+    s.bind((host, port))
 except socket.error as e:
     print(str(e))
 
